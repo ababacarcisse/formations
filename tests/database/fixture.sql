@@ -1,0 +1,4 @@
+insert into auth.users values('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','buyer@example.test'),('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb','buyer2@example.test'),('44444444-4444-4444-8444-444444444444','other@example.test'),('cccccccc-cccc-4ccc-8ccc-cccccccccccc','admin@example.test');
+insert into public.admin_users(user_id) values('cccccccc-cccc-4ccc-8ccc-cccccccccccc');
+update public.training_sessions set status='open',capacity=10,meeting_link='https://meeting.example.test/private',whatsapp_group_link='https://chat.whatsapp.com/private' where id='11111111-1111-4111-8111-111111111111';
+select public.create_training_order('11111111-1111-4111-8111-111111111111','Acheteur '||g,case when g=1 then 'buyer@example.test' else 'buyer'||g||'@example.test' end,'+221771234567','fixture-hash',('00000000-0000-4000-8000-'||lpad(g::text,12,'0'))::uuid,10000) from generate_series(1,20) g;

@@ -1,0 +1,4 @@
+project_id = "formations"
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
